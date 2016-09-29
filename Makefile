@@ -8,4 +8,4 @@ push:
 	docker push $(NAME)
 
 run:
-	docker run --rm $(NAME)
+	docker run --rm -it $(NAME)
