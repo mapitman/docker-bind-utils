@@ -4,6 +4,19 @@
 I use this on my Windows system at work to run [BIND](https://www.isc.org/downloads/bind/) utilities like `dig`, `host`, etc.
 
 ## Usage
+
+```sh
+docker run --rm -it mapitman/bind-utils dig
 ```
-docker run --rm -it mapitman/bind-utils sh
+
+I use functions in my `.bashrc` to make this work seamlessly.
+
+```sh
+dig () {
+    docker run -it --rm mapitman/bind-utils dig "$@";
+}
+
+host () {
+    docker run -it --rm mapitman/bind-utils host "$@";
+}
 ```
